@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <h2> Login </h2>
+        <!--отображение полей формы из forms.LoginForm-->
+        {{forms.as_p}}
+        <input type="submit" value="Login"/>
+    </form>
+{% endblock content %}
